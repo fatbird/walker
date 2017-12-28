@@ -25,6 +25,11 @@ module.exports = {
     new HtmlPlugin({
       template: 'src/index.html',
       filename: 'index.html',
+      cache: false,
+    }),
+    new HtmlPlugin({
+      template: 'src/index.html',
+      filename: '../index.html',
     }),
   ],
   devServer: {

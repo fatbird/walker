@@ -45207,6 +45207,7 @@ function init() {
   var grid = new THREE.GridHelper(10, 10, 0x888888, 0xcccccc);
   scene.add(grid);
 
+  document.getElementById('help-label').classList.remove('hidden');
   animate();
 }
 
@@ -45278,6 +45279,10 @@ window.onkeypress = function onKeyPress(e) {
       dRight.classList.toggle('multiple');
       onResize();
       break;
+    case 'KeyH':
+      document.getElementById('help-label').classList.toggle('hidden');
+      document.getElementById('help-content').classList.toggle('hidden');
+      break;
     default:
   }
 };
@@ -45322,7 +45327,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  background: #f9f9f9; }\n  body .status {\n    position: absolute;\n    z-index: 10;\n    font: normal 9pt monospace; }\n    body .status#status1 {\n      top: 10px;\n      left: 10px;\n      width: 90%;\n      height: 1.5em; }\n  body .camera-view {\n    position: absolute;\n    border: solid 0px #DDDDDD;\n    top: 1%;\n    bottom: 1%;\n    right: 1%;\n    left: 1%; }\n    body .camera-view.left, body .camera-view.middle, body .camera-view.right {\n      display: none; }\n    body .camera-view.top.multiple {\n      bottom: 35%; }\n    body .camera-view.left.multiple {\n      top: 66%;\n      right: 66.67%;\n      display: block; }\n    body .camera-view.middle.multiple {\n      top: 66%;\n      right: 34.33%;\n      left: 34.33%;\n      display: block; }\n    body .camera-view.right.multiple {\n      top: 66%;\n      left: 66.67%;\n      display: block; }\n  body canvas {\n    position: relative; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  background: #f9f9f9; }\n  body .status {\n    position: absolute;\n    z-index: 10;\n    font: normal 9pt monospace; }\n    body .status#status1 {\n      top: 10px;\n      left: 10px;\n      width: 90%;\n      height: 1.5em; }\n  body .camera-view {\n    position: absolute;\n    border: solid 0px #DDDDDD;\n    top: 1%;\n    bottom: 1%;\n    right: 1%;\n    left: 1%; }\n    body .camera-view.left, body .camera-view.middle, body .camera-view.right {\n      display: none; }\n    body .camera-view.top.multiple {\n      bottom: 35%; }\n    body .camera-view.left.multiple {\n      top: 66%;\n      right: 66.67%;\n      display: block; }\n    body .camera-view.middle.multiple {\n      top: 66%;\n      right: 34.33%;\n      left: 34.33%;\n      display: block; }\n    body .camera-view.right.multiple {\n      top: 66%;\n      left: 66.67%;\n      display: block; }\n  body canvas {\n    position: relative; }\n  body .help {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n    width: 200px;\n    z-index: 20;\n    font-size: 90%;\n    color: #999; }\n    body .help strong {\n      display: inline-block;\n      margin-right: 5px;\n      font-family: monospace;\n      font-size: 130%; }\n    body .help.hidden {\n      display: none; }\n", ""]);
 
 // exports
 
@@ -45479,7 +45484,7 @@ module.exports = function(list, options) {
 
 	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 	// tags it will allow on a page
-	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+	if (!options.singleton) options.singleton = isOldIE();
 
 	// By default, add <style> tags to the <head> element
 	if (!options.insertInto) options.insertInto = "head";
@@ -45962,6 +45967,7 @@ var s1 = document.getElementById('status1');window.s1 = s1;
 
 var walker = new THREE.Group();
 walker.name = 'walker';
+walker.rotation.y = Math.PI / 4;
 
 var localTarget = new THREE.Mesh(new THREE.SphereGeometry(0.02), new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
 walker.add(localTarget);
@@ -46115,7 +46121,7 @@ walker.handleInput = function handleInput(slice, active, renderer, camera, scene
 };
 walker.onBeforeRender = function onBeforeRender(renderer, scene, camera, geometry, material, group) {};
 
-walker.lookAt(new THREE.Vector3(1, 0, -1));
+walker.lookAt(new THREE.Vector3(1, 0, 0));
 exports.default = walker;
 
 /***/ }),

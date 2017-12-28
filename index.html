@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Walker example</title>
+    <title>Sandbox</title>
     <meta charset="utf-8">
+    <style>
+      .hidden { display: none; }
+    </style>
+
 </head>
 <body>
   <div class='camera-view top ' id='top'></div>
@@ -10,6 +14,19 @@
   <div class='camera-view middle ' id='middle'></div>
   <div class='camera-view right ' id='right'></div>
   <div class='status' id='status1'></div>
-  <script type="text/javascript" src="build/bundle.js"></script>
-</body>
+  <div class='help hidden' id='help-label'><strong>h</strong> help</div>
+  <div class='help hidden' id='help-content'>
+    Controls are camera-relative; camera follows the walker.<br>
+    <br>
+    <strong>w</strong> forward<br>
+    <strong>s</strong> backwards<br>
+    <strong>d</strong> right<br>
+    <strong>a</strong> left<br>
+    <br>
+    <strong>q</strong> camera orbit left<br>
+    <strong>e</strong> camera orbit right<br>
+    <br>
+    <strong>h</strong> toggle help<br>
+  </div>
+<script type="text/javascript" src="build/bundle.js"></script></body>
 </html>

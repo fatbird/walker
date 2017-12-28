@@ -52,5 +52,26 @@ body {
   canvas {
     position: relative;
   }
+
+  .help {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+    z-index: 20;
+    font-size: 90%;
+    color: #999;
+
+    strong {
+      display: inline-block;
+      margin-right: 5px;
+      font-family: monospace;
+      font-size: 130%;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
 }
 

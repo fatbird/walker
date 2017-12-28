@@ -68,6 +68,7 @@ function init() {
   const grid = new THREE.GridHelper(10, 10, 0x888888, 0xcccccc);
   scene.add(grid)
 
+  document.getElementById('help-label').classList.remove('hidden');
   animate();
 }
 
@@ -142,6 +143,10 @@ window.onkeypress = function onKeyPress(e) {
       dMiddle.classList.toggle('multiple');
       dRight.classList.toggle('multiple');
       onResize();
+      break;
+    case 'KeyH':
+      document.getElementById('help-label').classList.toggle('hidden');
+      document.getElementById('help-content').classList.toggle('hidden');
       break;
     default:
   }

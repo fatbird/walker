@@ -18,6 +18,7 @@ const s1 = document.getElementById('status1'); window.s1 = s1;
 
 let walker = new THREE.Group();
 walker.name = 'walker';
+walker.rotation.y = (Math.PI / 4);
 
 const localTarget = new THREE.Mesh(
   new THREE.SphereGeometry(0.02),
@@ -205,5 +206,5 @@ walker.onBeforeRender = function onBeforeRender(
 
 }
 
-walker.lookAt(new THREE.Vector3(1, 0, -1));
+walker.lookAt(new THREE.Vector3(1, 0, 0));
 export default walker;
