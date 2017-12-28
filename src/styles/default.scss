@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  background: #f9f9f9;
+
+  .status {
+    position: absolute;
+    z-index: 10;
+    font: normal 9pt monospace;
+
+    &#status1 {
+      top: 10px;
+      left: 10px;
+      width: 90%;
+      height: 1.5em;
+    }
+  }
+
+  .camera-view {
+    position: absolute;
+    border: solid 0px #DDDDDD;
+
+    top: 1%;
+    bottom: 1%;
+    right: 1%;
+    left: 1%;
+
+    &.left, &.middle, &.right {
+      display: none;
+    }
+
+    &.top.multiple {
+      bottom: 35%;
+    }
+    &.left.multiple {
+      top: 66%;
+      right: 66.67%;
+      display: block;
+    }
+    &.middle.multiple {
+      top: 66%;
+      right: 34.33%;
+      left: 34.33%;
+      display: block;
+    }
+    &.right.multiple {
+      top: 66%;
+      left: 66.67%;
+      display: block;
+    }
+  }
+
+  canvas {
+    position: relative;
+  }
+}
+
